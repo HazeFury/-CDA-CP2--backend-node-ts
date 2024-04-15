@@ -1,0 +1,11 @@
+{
+  "name": "checkpoint2",
+  "version": "1.0.0",
+  "description": "Checkpoint 2 about backend in CDA work &amp; study course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
