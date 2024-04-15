@@ -8,6 +8,7 @@ import { startStandaloneServer } from "@apollo/server/standalone";
 import { buildSchema } from "type-graphql";
 import { Country } from "./entities/country";
 import CountryResolver from "./resolvers/countryResolver";
+import ContinentResolver from "./resolvers/continentResolver";
 
 const app = express();
 const port = 4000;
@@ -39,7 +40,7 @@ app.listen(port, async () => {
 });
 
 buildSchema({
-  resolvers: [CountryResolver],
+  resolvers: [CountryResolver, ContinentResolver],
 }).then((schema) => {
   const server = new ApolloServer({ schema });
   startStandaloneServer(server, {

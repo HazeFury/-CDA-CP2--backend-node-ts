@@ -1,5 +1,6 @@
 import db from "./db";
 import { Country } from "./entities/country";
+import { Continent } from "./entities/continent";
 
 async function clearDB() {
   const runner = db.createQueryRunner();
@@ -17,6 +18,8 @@ async function main() {
   await db.initialize();
   await clearDB();
 
+  const europe = Continent.create({ name: "Europe", code: "EU" });
+
   const france = Country.create({
     code: "FR",
     name: "France",
@@ -32,6 +35,10 @@ async function main() {
     name: "Andorre",
     emoji: "🇦🇩",
   });
+
+  france.continent = europe;
+  belgium.continent = europe;
+  andorra.continent = europe;
 
   await france.save();
   await belgium.save();

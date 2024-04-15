@@ -4,6 +4,6 @@ export default new DataSource({
   type: "sqlite",
   database: "checkpoint_db.sqlite",
   entities: ["src/entities/*.ts"],
-  synchronize: false,
+  synchronize: true,
   logging: true,
 });
